@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Todos from './components/Todos';
 import './App.css';
+import Header from './components/layout/Header';
+import AddToDo from './components/AddToDo';
 
 class App extends Component {
   state = {
@@ -13,7 +15,7 @@ class App extends Component {
       {
         id: 2,
         title: 'Dinner with wife',
-        completed: true,
+        completed: false,
       },
       {
         id: 3,
@@ -40,14 +42,24 @@ class App extends Component {
     }));
   };
 
+  handleAdd = (title) => {
+    this.setState((state) => ({
+      todos: [...state.todos, { id: Date.now(), title, completed: false }],
+    }));
+  };
+
   render() {
     return (
       <div className="App">
-        <Todos
-          todos={this.state.todos}
-          onCompleted={this.handleCompleted}
-          onDelete={this.handleDelete}
-        />
+        <div className="container">
+          <Header />
+          <AddToDo onAdd={this.handleAdd} />
+          <Todos
+            todos={this.state.todos}
+            onCompleted={this.handleCompleted}
+            onDelete={this.handleDelete}
+          />
+        </div>
       </div>
     );
   }

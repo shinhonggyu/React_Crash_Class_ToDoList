@@ -20,12 +20,12 @@ class TodoItem extends PureComponent {
   // };
 
   render() {
+    console.log('TodoItem');
     const { title } = this.props.todo;
     return (
       <div style={this.getStyle()}>
         <p>
-          <input type="checkbox" onChange={this.handleCompleted} />
-          {title}
+          <input type="checkbox" onChange={this.handleCompleted} /> {title}
           <button
             style={btnStyle}
             onClick={this.props.onDelete.bind(this, this.props.todo)}

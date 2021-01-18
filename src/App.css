@@ -13,3 +13,20 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+.container {
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  padding: 7px 20px;
+  background: #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
+}
