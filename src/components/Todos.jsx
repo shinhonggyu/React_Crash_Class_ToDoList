@@ -9,6 +9,7 @@ class Todos extends Component {
         key={todo.id}
         todo={todo}
         onCompleted={this.props.onCompleted}
+        onDelete={this.props.onDelete}
       />
     ));
   }
